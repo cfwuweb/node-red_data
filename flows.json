@@ -1,0 +1,125 @@
+[
+    {
+        "id": "a9a43efac03943da",
+        "type": "tab",
+        "label": "流程1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "18d1ee7e3d9875a6",
+        "type": "mqtt-broker",
+        "name": "MQTT",
+        "broker": "mqtt.ridgerealm.com",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "9bb2fe0ead8cdd91",
+        "type": "mqtt out",
+        "z": "a9a43efac03943da",
+        "name": "",
+        "topic": "AIOT/user9",
+        "qos": "0",
+        "retain": "true",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "18d1ee7e3d9875a6",
+        "x": 570,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "52ed9ac4216caa0c",
+        "type": "inject",
+        "z": "a9a43efac03943da",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "123",
+        "payloadType": "str",
+        "x": 410,
+        "y": 240,
+        "wires": [
+            [
+                "9bb2fe0ead8cdd91"
+            ]
+        ]
+    },
+    {
+        "id": "8ef9e03f3c585325",
+        "type": "mqtt in",
+        "z": "a9a43efac03943da",
+        "name": "",
+        "topic": "AIOT/#",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "18d1ee7e3d9875a6",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 390,
+        "y": 160,
+        "wires": [
+            [
+                "1ecd33019abf47b0"
+            ]
+        ]
+    },
+    {
+        "id": "1ecd33019abf47b0",
+        "type": "debug",
+        "z": "a9a43efac03943da",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 540,
+        "y": 160,
+        "wires": []
+    }
+]
